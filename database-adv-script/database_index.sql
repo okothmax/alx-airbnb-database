@@ -36,3 +36,26 @@ CREATE INDEX idx_property_location ON Property(location);
 
 -- Create an index on pricepernight in the Property table for sorting and filtering by price
 CREATE INDEX idx_property_pricepernight ON Property(pricepernight);
+
+
+EXPLAIN ANALYZE 
+SELECT 
+    B.booking_id, 
+    B.start_date, 
+    B.end_date, 
+    B.status 
+FROM 
+    Booking B 
+WHERE 
+    B.status = 'confirmed' AND B.user_id = 123;
+
+EXPLAIN ANALYZE 
+SELECT 
+    B.booking_id, 
+    B.start_date, 
+    B.end_date, 
+    B.status 
+FROM 
+    Booking B 
+WHERE 
+    B.status = 'confirmed' AND B.user_id = 123;
