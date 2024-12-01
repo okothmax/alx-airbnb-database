@@ -25,7 +25,9 @@ SELECT
 FROM 
     Property
 LEFT JOIN 
-    Review ON Property.property_id = Review.property_id;
+    Review ON Property.property_id = Review.property_id
+ORDER BY 
+    Property.pricepernight ASC;
 
 
 -- FULL OUTER JOIN: Retrieve all users and all bookings, even if the user has no booking or a booking is not linked to a user.
